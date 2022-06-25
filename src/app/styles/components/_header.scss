@@ -1,0 +1,52 @@
+header {
+    position: fixed;
+    width: 100vw;
+    height: $headerHeight;
+    background-color: #fff;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        grid-gap: $spacing-10;
+        padding: 0 $spacing-10;
+
+        li {
+            color: $grey400;
+            height: 70%;
+            display: flex;
+            align-items: center;
+            @include type18Regular;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            img.icon {
+                filter: $grey400SVG;
+            }
+
+            &.active {
+                color: $primary500;
+                border-bottom: 2px solid $primary500;
+                img.icon {
+                    filter: $primary500SVG;
+                }
+            }
+
+            &.logo {
+                margin-right: auto;
+            }
+
+            &.user {
+                margin-left: auto;
+                img {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
