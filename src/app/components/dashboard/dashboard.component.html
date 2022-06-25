@@ -1,23 +1,44 @@
 <main>
     <section class="content">
         <h2>Contracts for Client</h2>
-        <div class="filter-area">
-            <span class="input">
-                <mat-icon>search</mat-icon>
-                <input type="text" placeholder="Search" />
-            </span>
-            <button
-                mat-flat-button
-                color="primary"
-                class="button-overrides shadow-button"
-            >
-                <mat-icon>add</mat-icon> New Hire
-            </button>
+        <div class="filters">
+            <div class="filters__row first-row">
+                <app-input-text
+                    label="Contractor Name"
+                    icon="search"
+                ></app-input-text>
 
-            <button mat-flat-button class="button-overrides grey-button">
-                <mat-icon>tune</mat-icon> Filters
-                <mat-icon>expand_more</mat-icon>
-            </button>
+                <button
+                    mat-flat-button
+                    color="primary"
+                    class="button-overrides button-shadow"
+                >
+                    <mat-icon>add</mat-icon> New Hire
+                </button>
+
+                <button mat-flat-button class="button-overrides button-grey">
+                    <mat-icon>tune</mat-icon> Filters
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+            </div>
+            <div class="filters__row second-row">
+                <app-datepicker label="Select a date range"></app-datepicker>
+
+                <app-dropdown
+                    label="Contract Type"
+                    [values]="contractTypes"
+                ></app-dropdown>
+
+                <app-dropdown
+                    label="Status"
+                    [values]="clientStatus"
+                ></app-dropdown>
+
+                <button mat-flat-button class="button-overrides button-grey">
+                    Clear
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
         </div>
     </section>
 </main>

@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline" class="ontop-form-field">
+    <mat-label>{{ label }}</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let option of values" [value]="option">{{
+            option
+        }}</mat-option>
+    </mat-select>
+</mat-form-field>

@@ -1,0 +1,10 @@
+.ontop-form-field {
+    width: 100%;
+    font-family: $fontFamily;
+    .mat-form-field-wrapper {
+        margin: 0 !important;
+    }
+    .mat-form-field-outline {
+        background-color: #fff;
+    }
+}
