@@ -23,11 +23,23 @@ main {
                 grid-gap: 0 1rem;
 
                 &.first-row {
+                    position: relative;
+                    z-index: 5;
                     display: grid;
                     grid-template-columns: 4fr 1.4fr 1fr;
                 }
                 &.second-row {
-                    display: flex;
+                    display: grid;
+                    grid-template-columns: 1.5fr 1.5fr 1.5fr 0.8fr;
+                    position: relative;
+                    z-index: 4;
+                    transform: translateY(-80px);
+                    transition: all 200ms ease-in-out;
+                    opacity: 0;
+                    &.show {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
                 }
             }
         }

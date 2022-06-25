@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
     public clients: ClientInterface[] = []
     public contractTypes = Object.values(ClientTypeEnum)
     public clientStatus = Object.values(ClientStatusEnum)
+    public showFilters: boolean = false
 
     constructor(private clientsService: ClientsService) {}
 
@@ -21,5 +22,9 @@ export class DashboardComponent implements OnInit {
         this.clientsService.getClients().subscribe(res => {
             this.clients = res
         })
+    }
+
+    public filtersSwitch(): void {
+        this.showFilters = !this.showFilters
     }
 }

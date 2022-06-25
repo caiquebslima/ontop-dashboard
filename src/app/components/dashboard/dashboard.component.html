@@ -16,12 +16,21 @@
                     <mat-icon>add</mat-icon> New Hire
                 </button>
 
-                <button mat-flat-button class="button-overrides button-grey">
+                <button
+                    mat-flat-button
+                    class="button-overrides button-grey"
+                    (click)="filtersSwitch()"
+                >
                     <mat-icon>tune</mat-icon> Filters
-                    <mat-icon>expand_more</mat-icon>
+                    <mat-icon>{{
+                        showFilters ? 'expand_less' : 'expand_more'
+                    }}</mat-icon>
                 </button>
             </div>
-            <div class="filters__row second-row">
+            <div
+                class="filters__row second-row"
+                [ngClass]="{ show: showFilters }"
+            >
                 <app-datepicker label="Select a date range"></app-datepicker>
 
                 <app-dropdown
