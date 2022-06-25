@@ -1,0 +1,70 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$ontop-theme: (
+    50: #ffebee,
+    100: #ffced4,
+    200: #ffadb8,
+    300: #ff8c9b,
+    400: #ff7385,
+    500: #ff5a70,
+    600: #ff5268,
+    700: #ff485d,
+    800: #ff3f53,
+    900: #ff2e41,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffdadd,
+    A700: #ffc0c5,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #000000,
+        500: #ffffff,
+        600: #000000,
+        700: #000000,
+        800: #000000,
+        900: #000000,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000,
+    ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ontop-dashboard-primary: mat.define-palette($ontop-theme, 500);
+$ontop-dashboard-accent: mat.define-palette($ontop-theme, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$ontop-dashboard-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$ontop-dashboard-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $ontop-dashboard-primary,
+            accent: $ontop-dashboard-accent,
+            warn: $ontop-dashboard-warn,
+        ),
+    )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($ontop-dashboard-theme);
+
+@import 'app/styles/index';
