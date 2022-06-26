@@ -1,3 +1,4 @@
+import { MatTableDataSource } from '@angular/material/table'
 import { OnInit, Component, Input } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
 import { DialogClientOptionsComponent } from '../dialog-client-options/dialog-client-options.component'
@@ -7,7 +8,7 @@ import { DialogClientOptionsComponent } from '../dialog-client-options/dialog-cl
     templateUrl: './table.component.html',
 })
 export class TableComponent implements OnInit {
-    @Input() data: any[]
+    @Input() data: MatTableDataSource<any>
     @Input() columns: any[]
     displayedColumns: string[]
     constructor(public dialog: MatDialog) {}
