@@ -1,5 +1,6 @@
 # OntopDashboard
 
+This project uses Angular native functionalities together with Angular Material components to create a dashboard based on a figma template. <br>
 To run this project, first run
 `yarn`
 in order to install dependencies. <br>
