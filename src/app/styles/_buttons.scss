@@ -1,5 +1,11 @@
 .button-icon-left {
-    padding-right: $spacing-03;
+    @media (min-width: 1280px) {
+        padding-right: $spacing-03;
+    }
+}
+.mat-flat-button,
+.mat-stroked-button {
+    font-family: $fontFamily;
 }
 .button-overrides {
     @include type18Regular;

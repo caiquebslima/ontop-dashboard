@@ -1,47 +1,53 @@
 <header>
-    <ul>
+    <ul class="desktop-nav">
         <li class="logo">
             <img src="assets/ontop_logo.svg" alt="Ontop's logo" />
         </li>
-        <li class="active">
+        <ng-container *ngFor="let menuItem of menuItems">
+            <li
+                [ngClass]="{
+                    'active nav-item': menuItem.selected,
+                    'nav-item': menuItem.label
+                }"
+            >
+                <a
+                    ><img
+                        src="assets/icons/{{ menuItem.icon }}"
+                        class="button-icon-left icon"
+                    />
+                    {{ menuItem.label }}</a
+                >
+            </li>
+        </ng-container>
+        <li class="user nav-item">
+            <app-user-menu></app-user-menu>
+        </li>
+        <li
+            class="hamburguer-menu__toggle"
+            (click)="toggleHamburguerMenu()"
+            [ngClass]="{
+                'active-hamburguer-menu': showHamburguerMenu
+            }"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+    </ul>
+    <ul
+        class="hamburguer-menu"
+        [ngClass]="{
+            'active-hamburguer-menu': showHamburguerMenu
+        }"
+    >
+        <li *ngFor="let menuItem of menuItems">
             <a
                 ><img
-                    src="assets/icons/user.svg"
-                    alt="person icon"
+                    src="assets/icons/{{ menuItem.icon }}"
                     class="button-icon-left icon"
                 />
-                Contracts</a
+                {{ menuItem.label }}</a
             >
-        </li>
-        <li>
-            <a
-                ><img
-                    src="assets/icons/document.svg"
-                    alt="document icon"
-                    class="button-icon-left icon"
-                />Documents</a
-            >
-        </li>
-        <li>
-            <a
-                ><img
-                    src="assets/icons/credit_card.svg"
-                    alt="credit card icon"
-                    class="button-icon-left icon"
-                />Payout</a
-            >
-        </li>
-        <li>
-            <a
-                ><img
-                    src="assets/icons/calendar.svg"
-                    alt="calendar icon"
-                    class="button-icon-left icon"
-                />Time</a
-            >
-        </li>
-        <li class="user">
-            <app-user-menu></app-user-menu>
         </li>
     </ul>
 </header>

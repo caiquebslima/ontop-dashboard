@@ -27,8 +27,8 @@ main {
                     position: relative;
                     z-index: 5;
                     display: grid;
-                    grid-template-columns: 4fr 1.4fr 1fr;
-                    @media (max-width: 768px) {
+                    grid-template-columns: 3fr 1.4fr 1fr;
+                    @media (max-width: $mobileBreakpoint) {
                         display: flex;
                         flex-direction: column;
                         grid-gap: $spacing-05;
@@ -44,7 +44,7 @@ main {
                     transform: translateY(-80px);
                     transition: all 200ms ease-in-out;
                     opacity: 0;
-                    @media (max-width: 768px) {
+                    @media (max-width: $mobileBreakpoint) {
                         display: flex;
                         flex-direction: column;
                         padding-bottom: $spacing-05;
@@ -61,7 +61,7 @@ main {
             width: 100%;
             transform: translateY(-80px);
             transition: all 200ms ease-in-out;
-            @media (max-width: 768px) {
+            @media (max-width: $mobileBreakpoint) {
                 transform: translateY(-304px);
             }
             &.filters-open {

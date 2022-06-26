@@ -5,49 +5,132 @@ header {
     height: $headerHeight;
     background-color: #fff;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
-    ul {
+    ul li {
+        color: $grey400;
+        height: 70%;
+        display: flex;
+        align-items: center;
+        @include type18Regular;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        img.icon {
+            filter: $grey400SVG;
+            @media (max-width: $mobileBreakpoint) {
+                filter: $whiteSVG;
+            }
+        }
+
+        &.active {
+            color: $primary500;
+            border-bottom: 2px solid $primary500;
+            img.icon {
+                filter: $primary500SVG;
+            }
+        }
+
+        &.logo {
+            margin-right: auto;
+        }
+
+        &.user {
+            margin-left: auto;
+            img {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        &.nav-item {
+            @media (max-width: $mobileBreakpoint) {
+                display: none;
+            }
+        }
+
+        &.hamburguer-menu__toggle {
+            display: block;
+            height: 25px;
+            padding-right: $spacing-07;
+            @media (min-width: $mobileBreakpoint) {
+                display: none;
+            }
+            span {
+                display: block;
+                width: 33px;
+                height: 4px;
+                margin-bottom: 5px;
+                position: relative;
+
+                background: #000;
+                border-radius: 3px;
+
+                z-index: 1;
+
+                transform-origin: 4px 0px;
+
+                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+                    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+                    opacity 0.55s ease;
+                &:first-child {
+                    transform-origin: 0% 0%;
+                }
+
+                &:nth-last-child(2) {
+                    transform-origin: 0% 100%;
+                }
+            }
+            &.active-hamburguer-menu span {
+                opacity: 1;
+                transform: rotate(-45deg) translate(0px, 0px);
+                background: #fff;
+            }
+
+            &.active-hamburguer-menu span:nth-last-child(3) {
+                opacity: 0;
+                transform: rotate(0deg) scale(0.2, 0.2);
+            }
+
+            &.active-hamburguer-menu span:nth-last-child(2) {
+                transform: rotate(45deg) translate(-8px, -9px);
+            }
+        }
+    }
+    ul.desktop-nav {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
         grid-gap: $spacing-10;
         padding: 0 $spacing-10;
+        @media (max-width: $smallerDesktopScreensBreakpoint) {
+            grid-gap: $spacing-07;
+            padding: 0 $spacing-05;
+        }
+    }
 
+    ul.hamburguer-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-end;
+        padding: $spacing-03 $spacing-05;
+        position: absolute;
+        top: 0;
+        min-height: calc(50vh - 20px);
+        padding-top: calc($headerHeight - 20px);
+        background-color: #232323;
+        transform-origin: 0% 0%;
+        transform: translate(100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
         li {
-            color: $grey400;
-            height: 70%;
-            display: flex;
-            align-items: center;
-            @include type18Regular;
-
-            &:hover {
-                cursor: pointer;
-            }
-
-            img.icon {
-                filter: $grey400SVG;
-            }
-
-            &.active {
-                color: $primary500;
-                border-bottom: 2px solid $primary500;
-                img.icon {
-                    filter: $primary500SVG;
-                }
-            }
-
-            &.logo {
-                margin-right: auto;
-            }
-
-            &.user {
-                margin-left: auto;
-                img {
-                    &:hover {
-                        cursor: pointer;
-                    }
-                }
-            }
+            padding: $spacing-03;
+            color: #fff;
+        }
+        &.active-hamburguer-menu {
+            transform: none;
         }
     }
 }

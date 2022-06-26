@@ -18,7 +18,6 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatSelectModule } from '@angular/material/select'
 import { DatepickerComponent } from './components/datepicker/datepicker.component'
 import { DropdownComponent } from './components/dropdown/dropdown.component'
-import { InputTextComponent } from './components/input-text/input-text.component'
 import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { TableComponent } from './components/table/table.component'
@@ -36,7 +35,6 @@ import { MatListModule } from '@angular/material/list'
         UserMenuComponent,
         DatepickerComponent,
         DropdownComponent,
-        InputTextComponent,
         TableComponent,
         MatTableResponsiveDirective,
         DialogClientOptionsComponent,

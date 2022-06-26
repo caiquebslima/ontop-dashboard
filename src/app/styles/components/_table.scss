@@ -1,11 +1,11 @@
-@media (min-width: 768px) {
+@media (min-width: $mobileBreakpoint) {
     .mat-table {
         width: 100%;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         tr.mat-header-row,
         tr.mat-row {
-            width: 100%;
+            width: calc(100% - $spacing-05 * 2);
             display: grid;
             grid-template-columns: 60px 1fr 1fr 1fr 1fr 1fr 30px;
         }
@@ -14,8 +14,9 @@
         }
         tr.mat-row {
             height: auto;
-            margin-bottom: $spacing-05;
+            margin: $spacing-05;
             background-color: $backgroundColor;
+            border-radius: 5px;
         }
 
         tr.mat-row td.mat-cell,
@@ -33,28 +34,35 @@
         }
         .mobile-context-menu-button {
             display: none;
+            @include type14Regular;
+            .mat-button-wrapper {
+                font-family: $fontFamily;
+            }
         }
     }
 }
-.mat-table .ontop-chip {
-    padding: 0.5rem;
-    width: 80px;
-    border-radius: 14px;
-    color: white;
-    display: block;
-    text-align: center;
-    font-weight: 500;
-    &.active {
-        background: #22c55e;
-    }
-    &.pending {
-        background: #f59e0b;
-    }
-    &.inactive {
-        background: #ef4444;
+.mat-table {
+    font-family: $fontFamily;
+    .ontop-chip {
+        padding: 0.5rem;
+        width: 80px;
+        border-radius: 14px;
+        color: white;
+        display: block;
+        text-align: center;
+        font-weight: 500;
+        &.active {
+            background: #22c55e;
+        }
+        &.pending {
+            background: #f59e0b;
+        }
+        &.inactive {
+            background: #ef4444;
+        }
     }
 }
-@media (max-width: 768px) {
+@media (max-width: $mobileBreakpoint) {
     .mat-table {
         .ontop-chip {
             padding: 0.25rem;
