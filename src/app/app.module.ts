@@ -24,6 +24,10 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { TableComponent } from './components/table/table.component'
 import { ReactiveFormsModule } from '@angular/forms'
 import { MatChipsModule } from '@angular/material/chips'
+import { MatTableResponsiveDirective } from './directives/mat-table-responsive.directive'
+import { MatDialogModule } from '@angular/material/dialog'
+import { DialogClientOptionsComponent } from './components/dialog-client-options/dialog-client-options.component'
+import { MatListModule } from '@angular/material/list'
 @NgModule({
     declarations: [
         AppComponent,
@@ -34,6 +38,8 @@ import { MatChipsModule } from '@angular/material/chips'
         DropdownComponent,
         InputTextComponent,
         TableComponent,
+        MatTableResponsiveDirective,
+        DialogClientOptionsComponent,
     ],
     imports: [
         BrowserModule,
@@ -52,6 +58,8 @@ import { MatChipsModule } from '@angular/material/chips'
         MatPaginatorModule,
         ReactiveFormsModule,
         MatChipsModule,
+        MatDialogModule,
+        MatListModule,
     ],
     providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-US' }],
     bootstrap: [AppComponent],

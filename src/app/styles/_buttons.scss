@@ -4,6 +4,10 @@
 .button-overrides {
     @include type18Regular;
     height: 58px;
+    @media (max-width: 768px) {
+        @include type16Regular;
+        height: 40px;
+    }
     .mat-button-wrapper:not(.mat-icon) {
         font-family: $fontFamily;
     }
@@ -14,4 +18,21 @@
 }
 .button-shadow {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.mobile-dialog-menu-button {
+    width: 100%;
+    .mat-button-wrapper {
+        width: 100%;
+    }
+}
+
+button.context-menu {
+    display: flex;
+    align-items: center;
+    img {
+        padding-right: 0.5rem;
+        min-width: 20px;
+        min-height: 20px;
+    }
 }
