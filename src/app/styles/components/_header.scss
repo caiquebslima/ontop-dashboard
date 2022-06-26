@@ -52,7 +52,6 @@ header {
         &.hamburguer-menu__toggle {
             display: block;
             height: 25px;
-            padding-right: $spacing-07;
             @media (min-width: $mobileBreakpoint) {
                 display: none;
             }
@@ -119,7 +118,7 @@ header {
         padding: $spacing-03 $spacing-05;
         position: absolute;
         top: 0;
-        min-height: calc(50vh - 20px);
+        min-height: 40vh;
         padding-top: calc($headerHeight - 20px);
         background-color: #232323;
         transform-origin: 0% 0%;
