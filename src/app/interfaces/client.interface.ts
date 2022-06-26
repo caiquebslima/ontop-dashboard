@@ -2,10 +2,11 @@ export interface ClientInterface {
     id: number
     first_name: string
     last_name: string
-    is_active: boolean
+    status: ClientStatusEnum
     type: ClientTypeEnum
     start_date: Date
     amount: number
+    picture: string
 }
 
 export enum ClientTypeEnum {
@@ -17,4 +18,5 @@ export enum ClientTypeEnum {
 export enum ClientStatusEnum {
     ACTIVE = 'Active',
     INACTIVE = 'Inactive',
+    PENDING = 'Pending',
 }

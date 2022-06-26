@@ -23,3 +23,9 @@ $fontFamily: 'Lato', sans-serif;
     line-height: 150%;
     letter-spacing: 0.1px;
 }
+@mixin type16Bold {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 125%;
+    letter-spacing: 0.25px;
+}

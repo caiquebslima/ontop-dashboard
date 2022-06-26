@@ -1,8 +1,18 @@
 <mat-form-field appearance="outline" class="ontop-form-field">
     <mat-label>{{ label }}</mat-label>
     <mat-date-range-input [rangePicker]="picker">
-        <input matStartDate />
-        <input matEndDate />
+        <input
+            matStartDate
+            placeholder="Start date"
+            (dateChange)="startDateChange($event)"
+            [value]="startDate"
+        />
+        <input
+            matEndDate
+            placeholder="End date"
+            (dateChange)="endDateChange($event)"
+            [value]="endDate"
+        />
     </mat-date-range-input>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-date-range-picker #picker></mat-date-range-picker>

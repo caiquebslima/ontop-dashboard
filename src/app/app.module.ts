@@ -15,10 +15,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
 import { HttpClientModule } from '@angular/common/http'
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core'
 import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatSelectModule } from '@angular/material/select';
-import { DatepickerComponent } from './components/datepicker/datepicker.component';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { MatSelectModule } from '@angular/material/select'
+import { DatepickerComponent } from './components/datepicker/datepicker.component'
+import { DropdownComponent } from './components/dropdown/dropdown.component'
 import { InputTextComponent } from './components/input-text/input-text.component'
+import { MatTableModule } from '@angular/material/table'
+import { MatPaginatorModule } from '@angular/material/paginator'
+import { TableComponent } from './components/table/table.component'
+import { ReactiveFormsModule } from '@angular/forms'
+import { MatChipsModule } from '@angular/material/chips'
 @NgModule({
     declarations: [
         AppComponent,
@@ -28,6 +33,7 @@ import { InputTextComponent } from './components/input-text/input-text.component
         DatepickerComponent,
         DropdownComponent,
         InputTextComponent,
+        TableComponent,
     ],
     imports: [
         BrowserModule,
@@ -42,6 +48,10 @@ import { InputTextComponent } from './components/input-text/input-text.component
         MatNativeDateModule,
         MatFormFieldModule,
         MatSelectModule,
+        MatTableModule,
+        MatPaginatorModule,
+        ReactiveFormsModule,
+        MatChipsModule,
     ],
     providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-US' }],
     bootstrap: [AppComponent],

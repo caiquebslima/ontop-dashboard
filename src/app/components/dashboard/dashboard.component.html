@@ -1,12 +1,18 @@
 <main>
     <section class="content">
-        <h2>Contracts for Client</h2>
+        <h2>Contracts for Caique</h2>
         <div class="filters">
             <div class="filters__row first-row">
-                <app-input-text
+                <!-- <app-input-text
                     label="Contractor Name"
                     icon="search"
-                ></app-input-text>
+                    [formControl]="nameSearch"
+                ></app-input-text> -->
+                <mat-form-field appearance="outline" class="ontop-form-field">
+                    <mat-label>Contractor Name</mat-label>
+                    <input matInput [formControl]="filterName" />
+                    <mat-icon matPrefix>search</mat-icon>
+                </mat-form-field>
 
                 <button
                     mat-flat-button
@@ -31,23 +37,43 @@
                 class="filters__row second-row"
                 [ngClass]="{ show: showFilters }"
             >
-                <app-datepicker label="Select a date range"></app-datepicker>
+                <app-datepicker
+                    label="Select a date range"
+                    (dateSelection)="filterByRange($event)"
+                    [startDate]="startDate"
+                    [endDate]="endDate"
+                ></app-datepicker>
 
                 <app-dropdown
                     label="Contract Type"
                     [values]="contractTypes"
+                    [(value)]="filterContractType"
+                    (valueChange)="filterByContractType()"
                 ></app-dropdown>
 
                 <app-dropdown
                     label="Status"
                     [values]="clientStatus"
+                    [(value)]="filterStatus"
+                    (valueChange)="filterByStatus()"
                 ></app-dropdown>
 
-                <button mat-flat-button class="button-overrides button-grey">
+                <button
+                    mat-flat-button
+                    class="button-overrides button-grey"
+                    (click)="clearFilters()"
+                >
                     Clear
                     <mat-icon>close</mat-icon>
                 </button>
             </div>
+        </div>
+
+        <div
+            class="table-container"
+            [ngClass]="{ 'filters-open': showFilters }"
+        >
+            <app-table [data]="clients" [columns]="tableColumns"></app-table>
         </div>
     </section>
 </main>

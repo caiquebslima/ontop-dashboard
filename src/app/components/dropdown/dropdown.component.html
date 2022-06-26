@@ -1,6 +1,6 @@
 <mat-form-field appearance="outline" class="ontop-form-field">
     <mat-label>{{ label }}</mat-label>
-    <mat-select>
+    <mat-select (selectionChange)="emitValueChange()" [(value)]="value">
         <mat-option *ngFor="let option of values" [value]="option">{{
             option
         }}</mat-option>

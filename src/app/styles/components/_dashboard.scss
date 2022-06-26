@@ -14,10 +14,11 @@ main {
         flex-direction: column;
         h2 {
             display: block;
-            padding: $spacing-10 0;
+            padding: $spacing-09 0;
             @include type32Bold;
         }
         .filters {
+            width: 100%;
             .filters__row {
                 width: 100%;
                 grid-gap: 0 1rem;
@@ -41,6 +42,15 @@ main {
                         opacity: 1;
                     }
                 }
+            }
+        }
+        .table-container {
+            width: 100%;
+            transform: translateY(-80px);
+            transition: all 200ms ease-in-out;
+            &.filters-open {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
     }
